@@ -1,10 +1,13 @@
 #include <stdio.h>
 
-/* Puts afficher texte*/
+/**
+ * main - entry point
+ *
+ * Return: Always 0 (Success)
+ */
+
 
 int main(void)
-/* Puts fonction pour imprimer gfnjksgffjresgjepisjgeiojropeij vfesigvje */
-
 {
 char *phrase1 = "\"Programming is like building a multilingual puzzle";
 
