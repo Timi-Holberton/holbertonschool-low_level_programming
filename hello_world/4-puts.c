@@ -3,6 +3,8 @@
 /* Puts afficher texte*/
 
 int main(void)
+/* Puts*/
+
 {
 char *phrase1 = "\"Programming is like building a multilingual puzzle";
 
