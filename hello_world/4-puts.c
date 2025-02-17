@@ -2,11 +2,7 @@
 
 /* Puts afficher texte*/
 
-int main(void)
-
-/**
-* Puts
-*/
+int main(void) /* Puts fonction pour imprimer */
 
 {
 char *phrase1 = "\"Programming is like building a multilingual puzzle";
