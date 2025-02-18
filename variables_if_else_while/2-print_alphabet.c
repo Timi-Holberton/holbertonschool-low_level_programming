@@ -2,8 +2,8 @@
 
 /**
  * main - Entry point
- *
- * Retur: Always 0 (Success)
+ * putchar
+ * Return: Always 0 (Success)
  */
 
 int main(void)
