@@ -13,8 +13,11 @@ int main(void)
 	for (nbre = 48; nbre <= 57; nbre++)
 	{
 		putchar(nbre);
+		if (nbre != 57)
+		{
 		putchar(44);
 		putchar(32);
+		}
 	}
 	putchar('\n');
 
