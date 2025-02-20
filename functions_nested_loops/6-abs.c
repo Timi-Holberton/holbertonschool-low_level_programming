@@ -3,15 +3,14 @@
 
 /**
  * _abs - Entry point
- * @n : n
+ * @nbre : nombre
  * Return: Always 0 (Success)
  */
 
-int _abs(int n)
+int _abs(int nbre)
 {
-	if (n < 0)
-	{
-		return (_abs(n));
-	}
-}
+	if (nbre >= 0)
+		return (nbre);
 
+	return (-(nbre));
+}
