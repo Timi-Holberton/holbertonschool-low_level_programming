@@ -24,16 +24,14 @@ void times_table(void)
 				_putchar('0' + (table % 10));
 				_putchar(44);
 				_putchar(32);
-
-	      			}
+			}
 			else
 			{
 				_putchar('0' + (table % 10));
-                                _putchar(44);
-                                _putchar(32);
+				_putchar(44);
+				_putchar(32);
 				_putchar(32);
 			}
-
 		}
 	}
 }
