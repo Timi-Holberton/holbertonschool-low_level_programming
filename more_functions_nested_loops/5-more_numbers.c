@@ -15,7 +15,7 @@ void more_numbers(void)
 	{
 		int j;
 		char tableau[] = "01234567891011121314";
-		for (j = 0; j <= 20; j++)
+		for (j = 0; j <= 19; j++)
 		{
 			_putchar(tableau[j]);
 
