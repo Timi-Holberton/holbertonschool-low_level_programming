@@ -9,16 +9,17 @@
 
 void puts_half(char *str)
 {
-	int i, k;
 
-	for (i = 0; str[i] != '\0'; i++)
+	int longueur, i, moit;
+
+	for (longueur = 0; str[longueur] != '\0'; longueur++)
+
+	moit = longueur / 2;
+
+	for (i = (moit + 1); i <= longueur; i++)
 	{
-		k = (i / 2);
-		while (k != '\0')
-		{
-			k++;
-			_putchar(str[k]);
-		}
+		_putchar(str[i]);
 	}
+
 	_putchar('\n');
 }
