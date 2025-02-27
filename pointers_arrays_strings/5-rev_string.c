@@ -2,22 +2,26 @@
 #include "main.h"
 
 /**
- * main - Entry point
- *
+ * rev_string - Entry point
+ * @s : tableau
  * Return: Always 0 (Success)
  */
 
 void rev_string(char *s)
 {
-	int i = 0;
-	int *j = &i;
+	int i, j;
+	int echange;
 
-	if (s == 0)
+
+	for (j = 0; s[j] != '\0'; j++)
 	{
-		for(i; i[s] != '\0'; i++);
 	}
-	else
+	j--;
+
+	for (i = 0; i < j; i++, j--)
 	{
-		for(s; s[*j] >= 0; s++);
+		echange = s[i]; /* intervertir caracteres voir exercice precedent*/
+		s[i] = s[j];
+		s[j] = echange;
 	}
 }
