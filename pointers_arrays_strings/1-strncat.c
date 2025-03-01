@@ -9,7 +9,7 @@
  * Return: Always 0.
  */
 
- char *_strncat(char *dest, char *src, int n)
+char *_strncat(char *dest, char *src, int n)
  /* n = nbre max de caractère depuis src*/
 {
 	int i = 0;
