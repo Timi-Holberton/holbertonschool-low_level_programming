@@ -9,22 +9,22 @@
  * Return: Always 0.
  */
 
- char *_strncat(char *dest, char *src, int n) /* n = position dans tableau*/
+ char *_strncat(char *dest, char *src, int n)
+ /* n = nbre max de caractère depuis src*/
 {
-	n = 0;
-	int i;
-	i = 0;
+	int i = 0;
+	int j = 0;
 
-	while (dest[n] != '\0')
-		n++;
+	while (dest[j] != '\0')
+		j++;
 
-	while (src[i] != '\0')
+	while (i < n && src[i] != '\0')
 	{
-		dest[n] = src[i];
+		dest[j] = src[i];
 		i++;
-		n++;
+		j++;
 	}
-		dest[n] = '\0';
+		dest[j] = '\0';
 
 	return (dest);
 }
