@@ -32,4 +32,4 @@ void more_numbers(void);
 void print_line(int n);
 void print_diagonal(int n);
 char *_strcat(char *dest, char *src);
-
+char *_strncat(char *dest, char *src, int n);
