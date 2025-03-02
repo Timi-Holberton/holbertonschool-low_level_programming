@@ -10,23 +10,15 @@
 
 int _strcmp(char *s1, char *s2)
 {
-	int i, j;
-
-	for (i = 0; s1[i] != '\0'; i++)
-
-	for (j = 0; s2[j] != '\0'; j++)
-
-	if (s1[i] == s2[j])
-	{
-		return (0);/* code */
+	int i = 0;
+/* compare un a un chaque caractère */
+	while (s1[i] != '\0' && s2[i] != '\0')
+	{/* si 1 caractère diffère on soustrait*/
+		if (s1[i] != s2[i])
+		{
+			return (s1[i] - s2[i]);/* code */
+		}
+		i++; /* penser a incrémenter dans while*/
 	}
-	else if (s1[i] > s2[j])
-	{
-		return (i > 0);
-	}
-	else
-	{
-		return (i < 0);
-	}
-	return (i);
+	return (s1[i] - s2[i]);
 }
