@@ -9,12 +9,19 @@
 
 char *leet(char *tab)
 {
-	int i;
-
-	for (i = 0; tab[i] = '\0'; i++)
+	int i, j;
+	char lettre[] = "aAeEoOtTlL";
+	char nombre[] = "4433007711";
+/* remplacer lettre par chiffre*/
+	for (i = 0; tab[i] != '\0'; i++)
 	{
-		if ((tab[i] >= 65) && (tab[i] <= 90))
-			i++;
+		for (j = 0; lettre[j] != '\0'; j++)
+		{
+			if (tab[i] == lettre[j])
+			{
+				tab[i] = nombre[j];
+			}
+		}
 	}
 	return (tab);
 }
