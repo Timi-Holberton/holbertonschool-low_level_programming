@@ -10,8 +10,8 @@
 int _atoi(char *s)
 {
 	int i;
-	int negatif = 1;
-	int nombre = 0;
+	unsigned int negatif = 1;
+	unsigned int nombre = 0;
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
