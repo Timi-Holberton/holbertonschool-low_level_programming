@@ -2,43 +2,38 @@
 #include <stdio.h>
 
 /**
- * cap_string - met en majuscules les mots d'une chaîne de caractères
+ * cap_string - met en majuscules la 1ère lettre/mots d'une string
  *@tab : tableau
  * Return: char
  */
 
 char *cap_string(char *tab)
 {
-	int i;
+	int i, j;
+	char separator[] = " \t\n,;.!?\"(){}"; /* liste separateur*/
+	int si_new_mot; /* nouveau mot */
 
 	for (i = 0; tab[i] != '\0'; i++)
-	{
-		if (i == 0)
+	{ /* Si c'est le début d'un mot et que c'est une lettre minuscule */
+		if ((si_new_mot = 1) && (tab[i] >= 97 && tab[i] <= 122))
 		{
-			if ((tab[i] >= 97) && (tab[i] <= 122))
-			{
-				tab[i] = tab[i] - 32;
-				continue;
-			}
-
+			tab[i] = tab[i] - 32; /* on passe en MAJ*/
+		} /* Si c'est pas le début du mot et si c'est une MAJ */
+		else if ((si_new_mot != 1) && (tab[i] >= 65 && tab[i] <= 90))
+		{
+			tab[i] = tab[i] + 32; /* on passe en minuscule*/
 		}
-		if ((tab[i] == 32) || (tab[i] == 33) || (tab[i] == 9))
-		{
-			i++;
+		si_new_mot = 0; /*2ème lettre du mot ou plus*/
 
-			if ((tab[i] >= 97) && (tab[i] <= 122))
-			{
-				tab[i] = tab[i] - 32;
-				continue;
-			}
-		}
-		else
+		/* Vérifie si le caractère est un séparateur*/
+		for (j = 0; separator[j] != '\0'; j++)
 		{
-			if ((tab[i] >= 65) && (tab[i] <= 90))
+			if (tab[i] == separator[j])
 			{
-				tab[i] = tab[i] + 32;
+				si_new_mot = 1; /* prochain caractère sera le début d'un mot*/
+				break; /* Pas besoin de vérifier les autres séparateurs */
 			}
 		}
 	}
-	return (tab);
+	return tab; /* On retourne le tableau avec les maj */
 }
