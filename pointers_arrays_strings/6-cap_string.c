@@ -11,7 +11,7 @@ char *cap_string(char *tab)
 {
 	int i, j;
 	char separator[] = " \t\n,;.!?\"(){}"; /* liste separateur*/
-	int si_new_mot; /* nouveau mot */
+	int si_new_mot = 1; /* nouveau mot */
 
 	for (i = 0; tab[i] != '\0'; i++)
 	{ /* Si c'est le début d'un mot et que c'est une lettre minuscule */
