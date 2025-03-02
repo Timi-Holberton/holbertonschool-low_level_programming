@@ -15,11 +15,11 @@ char *cap_string(char *tab)
 
 	for (i = 0; tab[i] != '\0'; i++)
 	{ /* Si c'est le début d'un mot et que c'est une lettre minuscule */
-		if (tab[i] >= 65 && tab[i] <= 90 )
+		if (tab[i] >= 65 && tab[i] <= 90)
 		{
 			i++;
 		}
-			else if((si_new_mot == 1) && ((tab[i] >= 97) && (tab[i] <= 122)))
+			else if ((si_new_mot == 1) && ((tab[i] >= 97) && (tab[i] <= 122)))
 		{
 			tab[i] = tab[i] - 32; /* on passe en MAJ*/
 		} /* Si c'est pas le début du mot et si c'est une MAJ */
