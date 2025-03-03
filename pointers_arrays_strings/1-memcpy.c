@@ -3,7 +3,9 @@
 
 /**
  * _memcpy - permet de copier un bloc de mémoire d'un emplacement à un autre
- *
+ * @dest : destination de la copie
+ * @src : source de la copie
+ * @n : nombre de bytes
  * Return: Always 0 (Success)
  */
 char *_memcpy(char *dest, char *src, unsigned int n)
