@@ -1,6 +1,6 @@
 #include "main.h"
 
-/*
+/**
  * _strspn - Retourne la longueur du préfixe de 's'
  * avec seulement des caractères de 'accept'.
  * @s: chaîne à analyser.
