@@ -41,12 +41,22 @@ unsigned int _strspn(char *s, char *accept)
  */
 	}
 /*
- * Si on a parcouru toute la chaîne 's' sans rencontrer de caractère non accepté,
- * on retourne la longueur totale de 's'.
+ * Si on a parcouru toute la chaîne 's' sans rencontrer de caractère non
+ * accepté, on retourne la longueur totale de 's'.
  */
 	return (cara);
 }
 /** la chaine s recherche dans la chaine accept si elle as des caractères
  * identique a accept et si ce n'est plus le cas elle affiche le nombre
  * de caractère en commun
+ *
+ * Pour reformuler avec tes mots et un peu plus de précision :
+ *
+ *La fonction parcourt la chaîne s depuis le début.
+ *Pour chaque caractère de s, elle vérifie s'il existe dans la chaîne témoin
+ *accept. Tant que chaque caractère de s est trouvé dans accept, on continue.
+ *Dès qu'un caractère de s n'existe pas dans accept, on arrête tout et on
+ *retourne le nombre total de caractères validés jusque-là.
+ *Donc oui, ça compte le nombre de caractères consécutifs communs au début
+ *de s avec accept, et ça s'arrête dès qu'il y a un intrus.
 */
