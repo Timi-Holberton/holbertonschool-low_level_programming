@@ -10,12 +10,12 @@ char *_strstr(char *haystack, char *needle)
 {
 	int i, j; /* Déclaration d'un compteur pour parcourir la chaîne */
 	 /* Initialisation de l'index à 0 */
-	for (j = 0; needle[j] != '\0'; j++)
+	for (i = 0; haystack[i] != '\0'; i++)
 	{
-		for (i = 0; haystack[i] == needle[i]; i++)
+		for (j = 0; needle[j] == haystack[i]; j++)
 		{
-			return (haystack[i]);
+			return (&haystack[i]);
 		}
-	{
-	return (needle[i]);
+	}
+	return (0);
 }
