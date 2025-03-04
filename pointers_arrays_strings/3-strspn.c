@@ -44,7 +44,7 @@ unsigned int _strspn(char *s, char *accept)
  * Si on a parcouru toute la chaîne 's' sans rencontrer de caractère non
  * accepté, on retourne la longueur totale de 's'.
  */
-	return (cara);
+	return (0);
 }
 /** la chaine s recherche dans la chaine accept si elle as des caractères
  * identique a accept et si ce n'est plus le cas elle affiche le nombre
