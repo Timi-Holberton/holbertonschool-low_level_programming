@@ -2,29 +2,29 @@
 #include "main.h"
 
 /**
- * _strpbrk - Entry point
+ * _strpbrk - recherche dans une chaîne de caractères la première
+ * occurrence d'un caractère parmi une liste de caractères autorisés.
  * @s : chaine recherche
  * @accept : chaine témoin
  * Return: Always 0 (Success)
  */
 char *_strpbrk(char *s, char *accept)
 {
-	int i;	/* Variable pour parcourir la chaîne 's' */
-	int j;	/* Variable pour parcourir la chaîne 'accept' */
+	int i, j;	/* Variables pour parcourir 's' et 'accept' */
 
+	/* Parcourt chaque caractère de 's' jusqu'à la fin de la chaîne */
 	for (i = 0; s[i] != '\0'; i++)
 	{
+		/* Vérifie si le caractère courant de 's' existe dans 'accept' */
 		for (j = 0; accept[j] != '\0'; j++)
 		{
+			/* Si on trouve une correspondance entre s[i] et accept[j] */
 			if (s[i] == accept[j])
-			{
-				break;
-			}
-		}
-		if (accept[j] == '\0')
-		{
-			break;
+				return (&s[i]);
+/* Retourne l'adresse de s[i] où la correspondance est trouvée */
 		}
 	}
-	return (s++);
+
+	/* Si aucun caractère n'est trouvé dans 'accept', retourne NULL */
+	return (0);	/* Aucun caractère de 's' n'est dans 'accept' */
 }
