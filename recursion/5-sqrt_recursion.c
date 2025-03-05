@@ -6,17 +6,24 @@
  * @n : racine carré
  * Return: Always 0 (Success)
  */
-int _sqrt_recursion(int n)
+int carrede(int n, int nbre)
 {
-	int x = 0;
-
-	if ((x * x) > n)
+	if(nbre * nbre == n)
+	{
+		return (nbre);
+	}
+	else if (nbre * nbre > n)
 	{
 		return (-1);
 	}
-	if ((x * x) == n)
+	return (carrede(n, nbre + 1));
+}
+
+int _sqrt_recursion(int n)
+{
+	if (n < 0)
 	{
-		return (x);
+		return (-1);
 	}
-	return ((1) * _sqrt_recursion(n - 1));
+	return (carrede(n, 1));
 }
