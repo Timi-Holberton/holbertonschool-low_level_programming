@@ -3,12 +3,15 @@
 
 /**
  * _sqrt_recursion - Entry point
+ * carrede - carré naturelle
  * @n : racine carré
+ * @n : racine carré
+ * @nbre : nombre multiplié
  * Return: Always 0 (Success)
  */
 int carrede(int n, int nbre)
 {
-	if(nbre * nbre == n)
+	if (nbre * nbre == n)
 	{
 		return (nbre);
 	}
