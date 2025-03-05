@@ -3,17 +3,21 @@
 
 /**
  * factorial - Entry point
- *
+ * @n : nombre
  * Return: Always 0 (Success)
  */
-int factorial(int n);
+int factorial(int n)
 {
+	if (n == 0)
+	{
+		return (1);
+	}
 	if (n < 0)
 	{
 		return (-1);
 	}
 	else
 	{
-		return ((1) + factorial(n));
+		return ((n) * factorial(n - 1));
 	}
 }
