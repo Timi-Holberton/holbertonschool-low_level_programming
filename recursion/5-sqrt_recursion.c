@@ -2,9 +2,7 @@
 #include "main.h"
 
 /**
- * _sqrt_recursion - Entry point
- * carrede - carré naturelle
- * @n : racine carré
+ * carrede - Entry point
  * @n : racine carré
  * @nbre : nombre multiplié
  * Return: Always 0 (Success)
@@ -21,7 +19,11 @@ int carrede(int n, int nbre)
 	}
 	return (carrede(n, nbre + 1));
 }
-
+/**
+ * _sqrt_recursion - Entry point
+ * @n : racine carré
+ * Return: Always 0 (Success)
+ */
 int _sqrt_recursion(int n)
 {
 	if (n < 0)
