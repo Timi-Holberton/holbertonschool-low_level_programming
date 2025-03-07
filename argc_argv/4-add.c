@@ -4,7 +4,7 @@
 #include "main.h"
 
 /**
- * main - calcul avec arguement variable inconnu
+ * main - calcul avec argument variable inconnu
  * @argc : nombre d'argument, toujours un int
  * @argv : contenu des arguments, toujours un char
  * Return: Always 0 (Success)
@@ -12,26 +12,30 @@
 
 int main(int argc, char *argv[])
 {
-	int i;
-	int addition = 0;
+	int i, j;
 
-	if (argc == 1)
+	int addition = 0; /* Initialise la somme totale à 0 */
+
+	if (argc == 1) /* Si aucun argument n'est donné (seulement le programme) */
 	{
-		printf("0\n");
+		printf("0\n"); /* Affiche 0 car rien à additionner */
 	}
-	for (i = 1; i < argc; i++)
-	if (!isdigit(*argv[i]))
-	{
-		printf("Error\n");
-		return (1);
-	}
-	else if (argc > 1)
-	{
-		for (i = 1; i < argc; i++)
+	for (i = 1; i < argc; i++) /* Parcourt chaque argument donné */
+	{/* Initialise j à 0 et parcourt chaque caractère de argv[i] */
+/* Continue tant que le caractère n'est pas le '\0' (fin de chaîne) */
+/* Incrémente j pour passer au caractère suivant à chaque tour */
+		for (j = 0; argv[i][j] != '\0'; j++)
 		{
-			addition = addition + atoi(argv[i]);
+			/* Vérifie si le caractère n'est pas un chiffre entre 0 et 9 */
+			if (!isdigit(argv[i][j]))
+			{
+				printf("Error\n"); /* Affiche Error si caractère non valide */
+				return (1); /* Quitte le programme avec un code d'erreur */
+			}
 		}
-		printf("%d\n", addition);
+		/* Ajoute à la somme l'entier converti depuis l'argument */
+		addition = addition + atoi(argv[i]);
 	}
-	return (0);
+	printf("%d\n", addition); /* Affiche la somme totale des arguments */
+	return (0); /* Retourne 0 pour indiquer que tout s'est bien passé */
 }
