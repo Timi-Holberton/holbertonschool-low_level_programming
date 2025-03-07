@@ -2,8 +2,9 @@
 #include <stdio.h>
 
 /**
- * main - check the code
- *
+ * print_diagsums - check the code
+ * @a : tableau 2
+ * @size : taille
  * Return: Always 0.
  */
 
