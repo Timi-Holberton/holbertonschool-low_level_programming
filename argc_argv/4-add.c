@@ -18,7 +18,8 @@ int main(int argc, char *argv[])
 
 	if (argc == 1) /* Si aucun argument n'est donné (seulement le programme) */
 	{
-		printf("0\n"); /* Affiche 0 car rien à additionner */
+		printf("0\n");
+		return (0); /* Affiche 0 car rien à additionner */
 	}
 	for (i = 1; i < argc; i++) /* Parcourt chaque argument donné */
 	{/* Initialise j à 0 et parcourt chaque caractère de argv[i] */
