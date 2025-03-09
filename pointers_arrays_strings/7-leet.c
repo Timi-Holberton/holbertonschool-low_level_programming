@@ -2,26 +2,48 @@
 #include <stdio.h>
 
 /**
- * leet - remplacer lettre par chiffre
- * @tab : tableau
- * Return: char
+ * leet - Remplace certaines lettres par des chiffres.
+ * @tab : Tableau de caractères à modifier.
+ *
+ * Return: Le tableau modifié avec les lettres remplacées.
  */
-
 char *leet(char *tab)
 {
 	int i, j;
-	char lettre[] = "aAeEoOtTlL";
-	char nombre[] = "4433007711";
-/* on lit le tableau*/
+	char lettre[] = "aAeEoOtTlL"; /* Lettres à remplacer */
+	char nombre[] = "4433007711"; /* Correspondance numérique */
+
+	/* Parcourt chaque caractère de la chaîne */
 	for (i = 0; tab[i] != '\0'; i++)
-	{/* on lit le tableau de lettre à remplacer*/
+	{
+		/* Vérifie chaque lettre pour voir si elle doit être remplacée */
 		for (j = 0; lettre[j] != '\0'; j++)
-		{/* on compare le tableau de base avec lettre à remplacer*/
+		{
+			/* Si une lettre correspond, on la remplace par le chiffre */
 			if (tab[i] == lettre[j])
-			{/* on fait correspondre tab lettre avec nombre avec la même posit*/
-				tab[i] = nombre[j];
+			{
+				tab[i] = nombre[j]; /* Remplace la lettre par le chiffre */
 			}
 		}
 	}
-	return (tab);
+	return (tab); /* Retourne le tableau modifié */
 }
+
+/*
+* Lexique :
+* - Tableau : Array, une collection de variables du même type.
+* - Remplacer : Replace, changer un élément par un autre.
+* - Correspondance : Matching, trouver un équivalent ou une relation
+*   entre deux éléments.
+* - Chiffre : Number, un symbole numérique utilisé pour représenter
+*   une valeur.
+*
+* Notions de base :
+* - Boucle for : Permet de parcourir chaque caractère dans le tableau.
+* - Condition if : Permet de vérifier si le caractère actuel doit
+*   être remplacé.
+* - Tableau de caractères : String array, un tableau qui contient une
+*   séquence de caractères.
+* - Correspondance de caractères : Remplacer les lettres spécifiques
+*   par des chiffres.
+*/

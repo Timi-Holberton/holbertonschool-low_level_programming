@@ -1,15 +1,15 @@
 #include "main.h"
 
-/**
- * _isdigit - Entry point
- * @c : variable Holb
- * Return: Always 0 (Success)
+/*
+ * _isdigit - Vérifie si c est un chiffre
+ * @c: Le caractère à vérifier
+ *
+ * Return: 1 si c est un chiffre, sinon 0.
  */
-
 int _isdigit(int c)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	else
-		return (0);
+    if (c >= '0' && c <= '9')  /* Vérifie si c est un chiffre */
+        return (1);
+    else
+        return (0);
 }

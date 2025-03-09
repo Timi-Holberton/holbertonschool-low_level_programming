@@ -1,20 +1,22 @@
 #include <stdio.h>
 
-/**
- * main - Entry point
+/*
+ * main - Point d'entrée du programme
+ * Description: Ce programme affiche les lettres minuscules de 'z' à 'a' en ordre inverse.
  *
- * Return: Always 0 (Success)
+ * Return: Toujours 0 (Succès)
  */
-
 int main(void)
 {
-	char i;
+    char i;
 
-	for (i = 'z'; i >= 'a'; i--)
-	{
-		putchar(i);
-	}
-	putchar('\n');
+    /* Boucle pour afficher les lettres de 'z' à 'a' en ordre inverse */
+    for (i = 'z'; i >= 'a'; i--)
+    {
+        putchar(i);  /* Affiche la lettre courante */
+    }
 
-return (0);
+    putchar('\n');  /* Affiche un retour à la ligne après la boucle */
+
+    return (0);  /* Indique que le programme s'est terminé avec succès */
 }

@@ -1,20 +1,22 @@
 #include <stdio.h>
 
-/**
- * main - Entry point
+/*
+ * main - Point d'entrée du programme
+ * Description: Ce programme affiche les chiffres de 0 à 9, puis imprime un retour à la ligne.
  *
- * Return: Always 0 (Success)
+ * Return: Toujours 0 (Succès)
  */
-
 int main(void)
 {
-	int i;
+    int i;
 
-	for (i = 0; i <= 9; i++)
-	{
-		printf("%d", i);
-	}
-	printf("\n");
+    /* Boucle pour afficher les chiffres de 0 à 9 */
+    for (i = 0; i <= 9; i++)
+    {
+        printf("%d", i);  /* Affiche le chiffre courant */
+    }
 
-return (0);
+    printf("\n");  /* Affiche un retour à la ligne après la boucle */
+
+    return (0);  /* Indique que le programme s'est terminé avec succès */
 }

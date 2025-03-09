@@ -2,14 +2,13 @@
 #include "main.h"
 
 /**
- * mul - Entry point
- * @a : var
- * @b : var
- * Return: Always 0 (Success)
+ * mul - Multiplie deux entiers
+ * @a: Premier nombre à multiplier
+ * @b: Deuxième nombre à multiplier
+ *
+ * Return: Le produit de a et b
  */
-
-
 int mul(int a, int b)
 {
-	return (a * b);
+    return (a * b);  /* Retourne le produit de a et b */
 }

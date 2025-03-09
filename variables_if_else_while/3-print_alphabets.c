@@ -1,22 +1,26 @@
 #include <stdio.h>
 
-/**
- * main - Entry point
+/*
+ * main - Point d'entrée du programme
+ * Description: Ce programme affiche toutes les lettres minuscules de 'a' à 'z'
+ * suivies de toutes les lettres majuscules de 'A' à 'Z', puis imprime un retour à la ligne.
  *
- * Return: Always 0 (Success)
+ * Return: Toujours 0 (Succès)
  */
-
 int main(void)
 {
-	char i;
+    char i;
+    char j;
 
-	char j;
+    /* Boucle pour afficher toutes les lettres minuscules de 'a' à 'z' */
+    for (i = 'a'; i <= 'z'; i++)
+        putchar(i);  /* Affiche chaque lettre minuscule */
 
-	for (i = 'a'; i <= 'z'; i++)
-		putchar(i);
-	for (j = 'A'; j <= 'Z'; j++)
-		putchar(j);
-	putchar('\n');
+    /* Boucle pour afficher toutes les lettres majuscules de 'A' à 'Z' */
+    for (j = 'A'; j <= 'Z'; j++)
+        putchar(j);  /* Affiche chaque lettre majuscule */
 
-return (0);
+    putchar('\n');  /* Affiche un retour à la ligne après les lettres */
+
+    return (0);  /* Indique que le programme s'est terminé avec succès */
 }

@@ -2,26 +2,41 @@
 #include "main.h"
 
 /**
- * rev_string - Entry point
- * @s : tableau
- * Return: Always 0 (Success)
+ * rev_string - Inverse une chaîne de caractères.
+ * @s : tableau de caractères à inverser
+ *
+ * Return: Aucun retour (void)
  */
-
 void rev_string(char *s)
 {
 	int i, j;
 	int echange;
 
-
-	for (j = 0; s[j] != '\0'; j++)
+	/* Trouver la longueur de la chaîne */
+	for (j = 0; s[j] != '\0'; j++) /* Parcours de la chaîne */
 	{
 	}
-	j--;
+	j--; /* Positionner j sur le dernier caractère valide */
 
-	for (i = 0; i < j; i++, j--)
+	/* Inverser les caractères en utilisant un échange */
+	for (i = 0; i < j; i++, j--) /* Tant que i est inférieur à j */
 	{
-		echange = s[i]; /* intervertir caracteres voir exercice precedent*/
-		s[i] = s[j];
-		s[j] = echange;
+		echange = s[i]; /* Sauvegarder le caractère à la position i */
+		s[i] = s[j]; /* Placer le caractère à la position j à i */
+		s[j] = echange; /* Placer le caractère sauvegardé à la position j */
 	}
 }
+
+/* Lexique :
+   - reverse: inverser
+   - string: chaîne
+   - character: caractère
+   - swap: échanger
+   - position: position
+*/
+
+/* Notions de base :
+   - Pointeurs: Un pointeur est une variable qui contient l'adresse d'une autre variable.
+   - Boucle for: Une boucle for permet de répéter un bloc de code un nombre déterminé de fois.
+   - Tableaux: Un tableau est une collection de variables de même type, accessibles par un indice.
+*/
