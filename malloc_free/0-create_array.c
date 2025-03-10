@@ -17,7 +17,7 @@ char *create_array(unsigned int size, char c)
 		if (tab == 0)
 		{
 			printf("Échec de l'allocation\n");
-		return (0);
+		return (NULL);
 		}
 
 		for (i = 0; i < size; i++)
@@ -26,4 +26,5 @@ char *create_array(unsigned int size, char c)
 		}
 		return (tab);
 		free(tab);
+		tab = NULL;
 }
