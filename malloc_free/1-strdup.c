@@ -3,7 +3,7 @@
 #include "main.h"
 
 /**
- *  - Entry point
+ * _strdup - Entry point
  *@str : tableau
  * Return: Always 0 (Success)
  */
@@ -11,7 +11,7 @@ char *_strdup(char *str)
 {
 	int i = 0;
 
-	char *dest = malloc((i+ 1) * sizeof(char));
+	char *dest = malloc((i + 1) * sizeof(char));
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
@@ -23,5 +23,5 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 
-	return(dest);
+	return (dest);
 }
