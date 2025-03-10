@@ -22,6 +22,7 @@ char *_strdup(char *str)
 	{
 		dest[i] = str[i];
 	}
+	dest[i] = '\0';
 
 	if (str == 0)
 	{
