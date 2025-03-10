@@ -38,8 +38,8 @@ int main(int argc, char *argv[])
 		{
 			/** Vérifie si le caractère n'est pas un chiffre valide */
 			if (!isdigit(argv[i][j]))
-			{
-				printf("Error\n"); /** Affiche "Error" en cas d'argument invalide */
+			{ /** Affiche "Error" en cas d'argument invalide */
+				printf("Error\n");
 				return (1); /** Quitte le programme avec un code d'erreur */
 			}
 		}

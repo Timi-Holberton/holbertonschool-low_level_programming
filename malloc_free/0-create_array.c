@@ -14,10 +14,9 @@ char *create_array(unsigned int size, char c)
 
 	char *tab = malloc(size * sizeof(char));
 
-		if (size == 0)
+		if (tab == 0)
 		{
-			printf("Échec de l'allocation\n");
-		return (NULL);
+			return (NULL);
 		}
 
 		for (i = 0; i < size; i++)
