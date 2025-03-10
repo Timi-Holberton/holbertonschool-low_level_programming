@@ -24,6 +24,4 @@ char *create_array(unsigned int size, char c)
 			tab[i] = c;
 		}
 		return (tab);
-		free(tab);
-		tab = NULL;
 }
