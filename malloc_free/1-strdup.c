@@ -26,6 +26,7 @@ char *_strdup(char *str)
 	{
 		dest[j] = str[j];
 	}
+	dest[i] = '\0';
 
 	if (dest == NULL)
 	{
@@ -36,6 +37,6 @@ char *_strdup(char *str)
 	{
 		return (NULL);
 	}
-	
+
 	return (dest);
 }
