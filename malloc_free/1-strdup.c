@@ -28,12 +28,7 @@ char *_strdup(char *str)
 	}
 	dest[j] = '\0';
 
-	if (dest == NULL)
-	{
-		return (NULL);
-	}
-
-	if (str == 0)
+		if (str == 0)
 	{
 		return (NULL);
 	}
