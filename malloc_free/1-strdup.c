@@ -19,7 +19,7 @@ char *_strdup(char *str)
 
 	if (!dest)
 	{
-		return (NULL);
+		return (0);
 	}
 
 	for (j = 0; str[j] != '\0'; j++)
@@ -30,7 +30,7 @@ char *_strdup(char *str)
 
 		if (str == 0)
 	{
-		return (NULL);
+		return (0);
 	}
 
 	return (dest);
