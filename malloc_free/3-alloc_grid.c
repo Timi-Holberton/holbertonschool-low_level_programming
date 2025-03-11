@@ -4,13 +4,14 @@
 
 /**
  * alloc_grid - Entry point
- *@width : colonne
- *@height : ligne
+ *@i : colonne width
+ *@j : ligne height
+ *@k : compteur
  * Return: Always 0 (Success)
  */
 int **alloc_grid(int width, int height)
 {
-	int w, h;
+	int i, j, k = 0;
 	int **tab;
 
 	if ((width <= 0) || (height <= 0))
@@ -18,28 +19,28 @@ int **alloc_grid(int width, int height)
 		return (0);
 	}
 
-	tab = malloc(height * sizeof(int *));
+	tab = malloc(i * sizeof(int*));
+	for (i = 0; i < height; i++)
+		tab[i] = malloc(width * sizeof(int));
 
 	if (!tab)
 	{
 		return (NULL);
 	}
 
-	for (h = 0; h < height; h++)
-	{
-		tab[h] = malloc(width * sizeof(int));
-	}
-
-	if (!tab[h])
+	if (!tab[i])
 	{
 		return (NULL);
 	}
 
-	for (h = 0; h < height; h++)
-		for (w = 0; w < width; w++)
-			tab[h][w] = 0;
+	for (i = 0; i < height; i++)
+		for (j = 0; j < width; j++)
+			tab[i][j] = ++k;
 
-			
+	for (i = 0; i < height; i++)
+		free(tab[i]);
+
+	free(tab);
+
 	return (tab);
 }
-
