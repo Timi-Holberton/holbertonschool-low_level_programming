@@ -4,15 +4,15 @@
 #include <limits.h>
 
 /**
- * main - check the code
- *
+ * malloc_checked - check the code
+ *@b : nombre octet
  * Return: Always 0.
  */
 void *malloc_checked(unsigned int b)
 {
 	int *ptr;
 
-	ptr = malloc (b);
+	ptr = malloc(b);
 
 	if (!ptr)
 	{
