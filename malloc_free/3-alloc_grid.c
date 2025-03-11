@@ -32,9 +32,9 @@ int **alloc_grid(int width, int height)
 
 	if (!tab[h])
 	{
-		for (k = 0; k < height; k++)
+		for (; h < height; h++)
 		{
-			free(tab[k]);
+			free(tab[h]);
 		}
 		free(tab);
 		return (NULL);
