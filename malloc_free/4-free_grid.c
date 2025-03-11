@@ -3,8 +3,9 @@
 #include <stdlib.h>
 
 /**
- *  - Entry point
- *
+ * free_grid - Entry point
+ *@grid : tableau
+ *@height : ligne
  * Return: Always 0 (Success)
  */
 void free_grid(int **grid, int height)
