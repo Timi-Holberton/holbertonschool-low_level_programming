@@ -9,7 +9,7 @@
  * Return: Always 0 (Success)
  */
 
-struct dog_t
+typedef dog_t
 {
 	char *name;
 	float age;
