@@ -2,12 +2,19 @@
 #define DOG_H
 
 /**
- * struct dog_t - Entry point
+ * struct dog - Entry point
  *@name : nom
  *@age : age
  *@owner : propriétaire
  * Return: Always 0 (Success)
  */
+
+struct dog
+{
+	char *name;
+	float age;
+	char *owner;
+};
 
 struct dog_t
 {
@@ -16,8 +23,8 @@ struct dog_t
 	char *owner;
 };
 
-void init_dog(struct dog_t *d, char *name, float age, char *owner);
-void print_dog(struct dog_t *d);
 
+void init_dog(struct dog *d, char *name, float age, char *owner);
+void print_dog(struct dog *d);
 
 #endif /* DOG_H */
