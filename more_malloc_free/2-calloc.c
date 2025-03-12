@@ -10,7 +10,7 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int *tab;
+	char *tab;
 	unsigned int i;
 
 	if (nmemb == 0 || size == 0)
@@ -24,7 +24,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 	}
 
-	for (i = 0; tab[i] < (nmemb * size); i++)
+	for (i = 0; i < (nmemb * size); i++)
 	{
 		tab[i] = 0;
 	}
