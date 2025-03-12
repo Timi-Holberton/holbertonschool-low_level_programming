@@ -1,27 +1,16 @@
+int i, j;
 
-int r = 3, c = 4, i, j, count;
+/* Trouver la fin de la chaîne dest */
+for (j = 0; dest[j] != '\0'; j++)
+	; /* Boucle vide pour trouver la fin */
 
-int** arr = (int**)malloc(r * sizeof(int*));
-for (i = 0; i < r; i++)
-	arr[i] = (int*)malloc(c * sizeof(int));
+/* Ajouter jusqu'à n caractères de src à dest */
+for (i = 0; i < n && src[i] != '\0'; i++, j++)
+{
+	dest[j] = src[i]; /* Copier chaque caractère de src dans dest */
+}
 
-// Note that arr[i][j] is same as *(*(arr+i)+j)
-count = 0;
-for (i = 0; i < r; i++)
-	for (j = 0; j < c; j++)
-		arr[i][j] = ++count; // OR *(*(arr+i)+j) = ++count
+dest[j] = '\0'; /* Ajouter un caractère nul à la fin de dest */
 
-for (i = 0; i < r; i++)
-	for (j = 0; j < c; j++)
-		printf("%d ", arr[i][j]);
-
-/* Code for further processing and free the
-   dynamically allocated memory */
-
-for (int i = 0; i < r; i++)
-	free(arr[i]);
-
-free(arr);
-
-return 0;
+return (dest); /* Retourner la chaîne de destination */
 }
