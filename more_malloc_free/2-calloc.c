@@ -10,17 +10,24 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	int *tab;
+	unsigned int *tab;
+	unsigned int i;
 
 	if (nmemb == 0 || size == 0)
 	{
 		return (NULL);
 	}
 
-	tab = malloc((nmemb * size) * sizeof(int));
+	tab = malloc(nmemb * size);
 	if (!tab)
 	{
 		return (NULL);
 	}
+
+	for (i = 0; tab[i] != '\0'; i++);
+	{
+		printf("%u", tab[i]);
+	}
+
 	return (tab);
 }

@@ -26,7 +26,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (long2 = 0; s2[long2] != '\0'; long2++)
 		;
 
-	if (n >= long2)
+	if (n < long2)
 		long2 = n;
 
 	tab = malloc((long1 + long2 + 1) * sizeof(char));
