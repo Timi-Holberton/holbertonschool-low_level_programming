@@ -32,9 +32,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 
 	d->age = age;
-	if (!d->age)
-		return (NULL);
-
+	
 	for (long1 = 0; name[long1] != '\0'; long1++)
 	d->name[long1] = name[long1];
 	d->name[long1] = '\0';
