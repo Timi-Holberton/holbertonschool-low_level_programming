@@ -19,6 +19,7 @@ int *array_range(int min, int max)
 	}
 
 	tab = malloc((max - min + 1) * sizeof(int));
+	
 	if (!tab)
 	{
 		free(tab);
@@ -29,5 +30,5 @@ int *array_range(int min, int max)
 	{
 		tab[i] = i;
 	}
-return (tab);
+	return (tab);
 }
