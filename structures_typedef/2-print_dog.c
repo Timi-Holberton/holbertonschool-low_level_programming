@@ -2,9 +2,7 @@
 #include <stdlib.h>
 #include "dog.h"
 
-  /* Inclut stdio.h pour les entrées/sorties */
-  /* Inclut stdlib.h pour la gestion mémoire */
-  /* Inclut le fichier d'en-tête dog.h */
+
 /**
  * print_dog - Affiche les informations d'une structure `dog`
  * @d: Pointeur vers la structure `dog` à afficher
@@ -18,10 +16,10 @@ void print_dog(struct dog *d)
 {
 	if (d == NULL) /* Vérifie si le pointeur est NULL */
 	{
-		return;    /* Si oui, on quitte la fonction */
+		return; /* Si oui, on quitte la fonction */
 	}
 
-	if (d->name == NULL)  /* Vérifie si le nom est NULL */
+	if (d->name == NULL) /* Vérifie si le nom est NULL */
 	{
 		printf("Name: (nil)\n");
 	}
@@ -29,7 +27,7 @@ void print_dog(struct dog *d)
 	{
 		printf("Name: %s\n", d->name);
 	}
-	if (d->age < 0)  /* Vérifie si l'âge est 0 */
+	if (d->age < 0) /* Vérifie si l'âge est 0 */
 	{
 		printf("Age: (nil)\n");
 	}
