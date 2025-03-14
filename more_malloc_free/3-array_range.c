@@ -19,13 +19,12 @@ int *array_range(int min, int max)
 	}
 
 	tab = malloc((max - min + 1) * sizeof(int));
-
 	if (!tab)
 	{
 		return (NULL);
 	}
 
-	for (i = 0; i <= (max - min + 1); i++)
+	for (i = 0; i <= (max - min); i++)
 	{
 		tab[i] = min + i;
 	}
