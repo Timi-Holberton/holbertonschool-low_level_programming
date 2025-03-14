@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "dog.h"
 #include <stdlib.h>
-
 /**
  * new_dog - Entry point
  *@name : nom
@@ -9,7 +8,6 @@
  *@owner : proprio
  * Return: d
  */
-
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	int long1, long2;
@@ -20,9 +18,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	d = malloc(sizeof(dog_t));
 	if (!d)
-	{
 		return (NULL);
-	}
+
 	for (long1 = 0; name[long1] != '\0'; long1++)
 		;
 	d->name = malloc((long1 + 1) * sizeof(char));
@@ -45,15 +42,11 @@ dog_t *new_dog(char *name, float age, char *owner)
 	d->age = age;
 
 	for (long1 = 0; name[long1] != '\0'; long1++)
-	{
 		d->name[long1] = name[long1];
-	}
 	d->name[long1] = '\0';
 
 	for (long2 = 0; owner[long2] != '\0'; long2++)
-	{
 		d->owner[long2] = owner[long2];
-	}
 	d->owner[long2] = '\0';
 
 	return (d);
