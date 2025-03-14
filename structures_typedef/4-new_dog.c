@@ -7,7 +7,7 @@
  *@name : nom
  *@age : age
  *@owner : proprio
- * Return: Always 0 (Success)
+ * Return: d
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
@@ -16,7 +16,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	dog_t *d = malloc(sizeof(dog_t));
 
-	if (!d)
+	if (!d || )
 		return (NULL);
 
 	for (long1 = 0; name[long1] != '\0'; long1++)
