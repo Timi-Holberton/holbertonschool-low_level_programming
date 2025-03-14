@@ -1,13 +1,16 @@
 #include <stdio.h>
-#include "dog.h"
 #include <stdlib.h>
+#include "dog.h"
+
 /**
- * new_dog - Entry point
- *@name : nom
- *@age : age
- *@owner : proprio
- * Return: d
+ * new_dog - Crée un nouveau chien avec copie des infos.
+ * @name: Nom du chien.
+ * @age: Âge du chien.
+ * @owner: Propriétaire du chien.
+ *
+ * Return: Pointeur vers la nouvelle structure dog_t, ou NULL si échec.
  */
+
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	int long1, long2;
@@ -34,7 +37,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	d->owner = malloc((long2 + 1) * sizeof(char));
 	if (!d->owner)
 	{
-		free(name);
+		free(d->name);
 		free(d);
 		return (NULL);
 	}
