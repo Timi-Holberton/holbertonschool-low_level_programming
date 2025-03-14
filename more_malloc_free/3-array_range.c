@@ -22,7 +22,6 @@ int *array_range(int min, int max)
 
 	if (!tab)
 	{
-		free(tab);
 		return (NULL);
 	}
 
