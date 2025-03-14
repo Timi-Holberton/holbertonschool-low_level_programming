@@ -27,24 +27,3 @@ dog_t *new_dog(char *name, float age, char *owner);
 void free_dog(dog_t *d);
 
 #endif /* DOG_H */
-
-/* DOG_H */ /* Fin de la directive de préprocesseur */
-
-/**
- * Lexique :
- * - structure (structure) : Une collection de variables
- *   regroupées sous un même type.
- * - pointeur (pointer) : Une variable contenant l'adresse
- *   d'une autre variable.
- * - typedef : Mot-clé permettant de définir un alias pour
- *   un type de donnée.
- *
- * Rappels des notions utilisées :
- * - `#ifndef DOG_H / #define DOG_H / #endif` : Protection
- *   contre les inclusions multiples du fichier d'en-tête.
- * - `typedef struct dog { ... } dog_t;` : Création d'un
- *   alias `dog_t` pour `struct dog` afin de simplifier son
- *   utilisation.
- * - `char *name;` : Utilisation d'un pointeur pour stocker
- *   une chaîne de caractères dynamique.
- */
