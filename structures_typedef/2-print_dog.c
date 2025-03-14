@@ -1,7 +1,10 @@
-#include <stdio.h>  /* Inclut stdio.h pour les entrées/sorties */
-#include <stdlib.h> /* Inclut stdlib.h pour la gestion mémoire */
-#include "dog.h"    /* Inclut le fichier d'en-tête dog.h */
+#include <stdio.h>
+#include <stdlib.h>
+#include "dog.h"
 
+  /* Inclut stdio.h pour les entrées/sorties */
+  /* Inclut stdlib.h pour la gestion mémoire */
+  /* Inclut le fichier d'en-tête dog.h */
 /**
  * print_dog - Affiche les informations d'une structure `dog`
  * @d: Pointeur vers la structure `dog` à afficher
@@ -26,7 +29,7 @@ void print_dog(struct dog *d)
 	{
 		printf("Name: %s\n", d->name);
 	}
-	if (d->age == 0)  /* Vérifie si l'âge est 0 */
+	if (d->age < 0)  /* Vérifie si l'âge est 0 */
 	{
 		printf("Age: (nil)\n");
 	}
@@ -43,23 +46,3 @@ void print_dog(struct dog *d)
 		printf("Owner: %s\n", d->owner);
 	}
 }
-
-/**
- * Lexique :
- * - structure (structure) : Une collection de variables
- *   regroupées sous un même type.
- * - pointeur (pointer) : Une variable contenant l'adresse
- *   d'une autre variable.
- * - NULL : Valeur spéciale indiquant qu'un pointeur ne
- *   pointe vers rien.
- *
- * Rappels des notions utilisées :
- * - `struct dog *d` : Déclare un pointeur vers une
- *   structure `dog`, permettant d'accéder à ses membres.
- * - `if (d == NULL) return;` : Vérifie si `d` est NULL pour
- *   éviter un accès mémoire invalide.
- * - `d->name` : Utilise l'opérateur `->` pour accéder aux
- *   membres de la structure via un pointeur.
- * - `printf("...")` : Fonction pour afficher du texte sur
- *   la sortie standard.
- */
