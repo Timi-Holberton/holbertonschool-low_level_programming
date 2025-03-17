@@ -2,7 +2,7 @@
 #include "function_pointers.h"
 
 /**
- * int_index - Recherche l'index du premier élément satisfaisant une condition.
+ * int_index - Recherche index du premier élément selon une condition.
  * @array: Pointeur vers le tableau d'entiers.
  * @size: Nombre d'éléments dans le tableau.
  * @cmp: Pointeur vers une fonction de comparaison.
@@ -11,7 +11,7 @@
  * sur chaque élément. Si @cmp retourne une valeur différente de 0,
  * l'index de l'élément est renvoyé.
  *
- * Return: L'index du premier élément trouvé, ou -1 si aucun ne correspond.
+ * Return: L'index du 1er élément trouvé, ou -1 si aucun ne correspond.
  */
 int int_index(int *array, int size, int (*cmp)(int))
 {
