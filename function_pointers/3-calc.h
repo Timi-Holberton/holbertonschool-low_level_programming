@@ -1,5 +1,5 @@
-#ifndef 3_CALC_H
-#define 3_CALC_H
+#ifndef CALC_H
+#define ALC_H
 
 /**
  * struct op - Struct op
@@ -9,8 +9,8 @@
  */
 typedef struct op
 {
-    char *op;
-    int (*f)(int a, int b);
+	char *op;
+	int (*f)(int a, int b);
 } op_t;
 
 
@@ -20,4 +20,4 @@ int op_mul(int a, int b);
 int op_div(int a, int b);
 int op_mod(int a, int b);
 
-#endif /* 3_CALC_H */
+#endif /* CALC_H */
