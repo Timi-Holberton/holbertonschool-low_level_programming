@@ -5,38 +5,39 @@
 #include "3-calc.h"
 
 /**
- * main - description
- * @argc: Le nombre d'arguments passés à la ligne de commande.
- * @argv: Un tableau de chaînes de caractères
- * Return: 0 success
+ * main - Programme principal effectuant une opération arithmétique.
+ * @argc: Nombre d'arguments passés en ligne de commande.
+ * @argv: Tableau contenant les arguments sous forme de chaînes.
+ * Return: 0 en cas de succès, sinon un code d'erreur.
  */
 int main(int argc, char *argv[])
 {
-	int num1 = 0, num2 = 0, calc = 0;
-	char *operator;
+	int num1, num2, calc;
+	int (*operator)(int, int);
 
 	if (argc != 4)
 	{
-		printf("ERROR\n");
+		printf("Error\n");
 		exit(98);
 	}
 
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
-	operator = argv[2];
+	operator = get_op_func(argv[2]);
 
-	if (*operator == '\0' || strchr("+-*/%", *operator) == NULL )
+	if (operator == NULL)
 	{
-		printf("ERROR\n");
+		printf("Error\n");
 		exit(99);
 	}
-	if (((*operator == '/') || (*operator == '%')) && (num2 == 0))
+
+	if ((*argv[2] == '/' || *argv[2] == '%') && num2 == 0)
 	{
-		printf("ERROR\n");
+		printf("Error\n");
 		exit(100);
 	}
 
-	calc = get_op_func(operator)(num1, num2);
+	calc = operator(num1, num2);
 	printf("%d\n", calc);
 
 	return (0);
