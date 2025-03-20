@@ -1,16 +1,29 @@
-int i, j;
+#include <stdio.h>
+#include <stdarg.h>
 
-/* Trouver la fin de la chaîne dest */
-for (j = 0; dest[j] != '\0'; j++)
-	; /* Boucle vide pour trouver la fin */
-
-/* Ajouter jusqu'à n caractères de src à dest */
-for (i = 0; i < n && src[i] != '\0'; i++, j++)
+void foo(char *fmt, ...)
 {
-	dest[j] = src[i]; /* Copier chaque caractère de src dans dest */
-}
+	va_list ap;
+	int d;
+	char c, *s;
 
-dest[j] = '\0'; /* Ajouter un caractère nul à la fin de dest */
-
-return (dest); /* Retourner la chaîne de destination */
+	va_start(ap, fmt);
+	while (*fmt)
+		switch (*fmt ++) {
+		case aqsaq:              /* chaîne */
+			s = va_arg (ap, char *);
+			printf("chaîne %s\n", s);
+			break;
+		case aqdaq:              /* entier */
+			d = va_arg (ap, int);
+			printf("int %d\n", d);
+			break;
+		case aqcaq:              /* caractère */
+			/* need a cast here since va_arg only
+			   takes fully promoted types */
+			c = va_arg (ap, char);
+			printf("char %c\n", c);
+			break;
+		}
+	va_end(ap);
 }
