@@ -106,7 +106,7 @@ void print_all(const char * const format, ...)
 }
 
 /**
- * Lexique :
+ * Lexique 
  * - va_list : Type pour stocker des arguments variables.
  * - va_start : Initialise la liste des arguments.
  * - va_arg : Extrait un argument de la liste.
@@ -117,7 +117,7 @@ void print_all(const char * const format, ...)
  */
 
 /**
- * Rappels des notions en C :
+ * Rappels des notions en C
  * - Les structures permettent d'associer plusieurs types sous un seul nom.
  * - Un pointeur de fonction stocke l'adresse d'une fonction et permet
  *   de l'exécuter dynamiquement.
