@@ -1,26 +1,52 @@
-#include <stdarg.h> /* Bibliothèque pour gérer les arguments ... */
+#include <stdarg.h> /* Bibliothèque pour gérer les arguments */
 #include <stdio.h>  /* Bibliothèque pour printf */
 #include "variadic_functions.h" /* Header des fonctions */
 
-/* Fonction pour afficher un caractère */
+/**
+ * print_char - Affiche un caractère
+ * @args: Liste des arguments
+ *
+ * Description:
+ * - Récupère un caractère de type `char` stocké en `int`
+ *   dans la liste d'arguments et l'affiche.
+ */
 void print_char(va_list args)
 {
 	printf("%c", va_arg(args, int)); /* Récupère un char en int */
 }
 
-/* Fonction pour afficher un entier */
+/**
+ * print_int - Affiche un entier
+ * @args: Liste des arguments
+ *
+ * Description:
+ * - Récupère un entier `int` depuis la liste et l'affiche.
+ */
 void print_int(va_list args)
 {
 	printf("%d", va_arg(args, int)); /* Récupère un int */
 }
 
-/* Fonction pour afficher un float */
+/**
+ * print_float - Affiche un nombre flottant
+ * @args: Liste des arguments
+ *
+ * Description:
+ * - Récupère un `float` stocké en `double` et l'affiche.
+ */
 void print_float(va_list args)
 {
 	printf("%f", va_arg(args, double)); /* Récupère un float */
 }
 
-/* Fonction pour afficher une chaîne de caractères */
+/**
+ * print_string - Affiche une chaîne de caractères
+ * @args: Liste des arguments
+ *
+ * Description:
+ * - Récupère une chaîne de caractères (`char *`).
+ * - Si la chaîne est NULL, affiche "(nil)".
+ */
 void print_string(va_list args)
 {
 	char *s = va_arg(args, char *); /* Récupère un char * */
@@ -36,10 +62,10 @@ void print_string(va_list args)
  * @format: Chaîne contenant les types ('c', 'i', 'f', 's')
  *
  * Description:
- * - c : caractère (char)
- * - i : entier (int)
- * - f : nombre flottant (float)
- * - s : chaîne de caractères (string)
+ * - `c` : caractère (`char`)
+ * - `i` : entier (`int`)
+ * - `f` : nombre flottant (`float`)
+ * - `s` : chaîne de caractères (`char *`)
  * Si un argument est NULL, (nil) est affiché.
  * Séparation par ", " entre chaque élément.
  */
@@ -63,10 +89,10 @@ void print_all(const char * const format, ...)
 		j = 0;
 		while (j < 4) /* Vérifie les 4 types possibles */
 		{
-			if (format[i] == type[j].symbol) /* Si le type correspond */
+			if (format[i] == type[j].symbol) /* Si type correct */
 			{
 				printf("%s", separator); /* Ajoute le séparateur */
-				type[j].print_function(args); /* Appelle la bonne fct */
+				type[j].print_function(args); /* Affiche l'élément */
 				separator = ", "; /* Définit le séparateur */
 				break; /* Sort de la boucle */
 			}
@@ -81,19 +107,20 @@ void print_all(const char * const format, ...)
 
 /**
  * Lexique :
- * - va_list : type pour stocker les arguments variables.
- * - va_start : initialise la liste des arguments.
- * - va_arg : extrait un argument de la liste.
- * - va_end : termine l'utilisation de va_list.
- * - format : chaîne contenant les types des arguments.
- * - printf : fonction d'affichage formaté.
+ * - va_list : Type pour stocker des arguments variables.
+ * - va_start : Initialise la liste des arguments.
+ * - va_arg : Extrait un argument de la liste.
+ * - va_end : Termine l'utilisation de va_list.
+ * - typedef : Crée un alias pour un type.
+ * - struct : Structure regroupant plusieurs variables.
+ * - Pointeur de fonction : Stocke l'adresse d'une fonction.
  */
 
 /**
  * Rappels des notions en C :
- * - Les pointeurs : Un pointeur stocke l'adresse d'une variable.
- * - Les tableaux : Un tableau est une suite d'éléments du même type.
- * - Les structures : Permettent de regrouper des données sous un nom.
- * - Les boucles while : Exécutent un bloc tant qu'une condition est vraie.
- * - Les conditions if : Permettent d'exécuter un bloc selon une condition.
+ * - Les structures permettent d'associer plusieurs types sous un seul nom.
+ * - Un pointeur de fonction stocke l'adresse d'une fonction et permet
+ *   de l'exécuter dynamiquement.
+ * - Les prototypes de fonction définissent les signatures des fonctions
+ *   avant leur implémentation.
  */
