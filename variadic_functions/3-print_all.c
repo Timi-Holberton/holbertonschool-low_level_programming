@@ -104,23 +104,3 @@ void print_all(const char * const format, ...)
 	va_end(args); /* Termine l'utilisation de la liste */
 	printf("\n"); /* Ajoute un saut de ligne final */
 }
-
-/**
- * Lexique 
- * - va_list : Type pour stocker des arguments variables.
- * - va_start : Initialise la liste des arguments.
- * - va_arg : Extrait un argument de la liste.
- * - va_end : Termine l'utilisation de va_list.
- * - typedef : Crée un alias pour un type.
- * - struct : Structure regroupant plusieurs variables.
- * - Pointeur de fonction : Stocke l'adresse d'une fonction.
- */
-
-/**
- * Rappels des notions en C
- * - Les structures permettent d'associer plusieurs types sous un seul nom.
- * - Un pointeur de fonction stocke l'adresse d'une fonction et permet
- *   de l'exécuter dynamiquement.
- * - Les prototypes de fonction définissent les signatures des fonctions
- *   avant leur implémentation.
- */
