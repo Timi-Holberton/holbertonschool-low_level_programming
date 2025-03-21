@@ -11,7 +11,7 @@
 void print_all(const char * const format, ...)
 {
 	char *s; /* string */
-	float f; /* float */
+	float e; /* float */
 	int c, i, k = 0, j = 0; /* intiger - compteur */
 	va_list argument;
 
@@ -30,10 +30,10 @@ void print_all(const char * const format, ...)
 			printf("%d", i);
 			printf(", ");
 		}
-		else if (format[j] == 'f')
+		else if (format[j] == 'e')
 		{
-			f = va_arg(argument, double);
-			printf("%f", f);
+			e = va_arg(argument, double);
+			printf("%f", e);
 			printf(", ");
 		}
 		else if (format[j] == 's')
