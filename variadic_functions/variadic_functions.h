@@ -6,7 +6,7 @@ typedef struct format1
 {
 	char symbol;
 	void (*print_function)(va_list args);
-} f1;
+} format1, f1;
 
 
 
