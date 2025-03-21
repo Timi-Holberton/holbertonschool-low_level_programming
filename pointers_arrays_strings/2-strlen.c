@@ -12,12 +12,12 @@ int _strlen(char *s)
     int i = 0;
 
     /* Parcourt la chaîne tant que le caractère courant n'est pas '\0' */
-    while (i[s] != '\0')
+    while (s[i] != '\0')
     {
         i++;
     }
 
-    return (i);  /* Retourne la longueur de la chaîne */
+    return (s);  /* Retourne la longueur de la chaîne */
 }
 
 /**
