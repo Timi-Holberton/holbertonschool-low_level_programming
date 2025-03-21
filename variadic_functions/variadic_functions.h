@@ -6,9 +6,7 @@ typedef struct format1
 {
 	char symbol;
 	void (*print_function)(va_list args);
-} format1, f1;
-
-
+} format1;
 
 int _putchar(char c);
 int sum_them_all(const unsigned int n, ...);

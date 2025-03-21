@@ -39,7 +39,7 @@ void print_all(const char * const format, ...)
 
 	va_list args;
 
-	f1 type[] = {
+	format1 type[] = {
 		{'c', print_char},
 		{'i', print_int},
 		{'f', print_float},
