@@ -4,9 +4,9 @@
 #include "lists.h"
 
 /**
- * list_len - print le nombre d'élément
+ * list_len - print le nombre d'élément d'une liste chainées
  * @h: pointeur vers le noeud suivant
- * Return: retourne nbre d'élements
+ * Return: retourne nbre d'élements d'une liste chainées
  */
 
 size_t list_len(const list_t *h)
