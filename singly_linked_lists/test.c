@@ -1,30 +1,30 @@
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 #include "lists.h"
 
-/**
- * print_list - print la liste chainée
- * @h: pointeur vers le noeud suivant
- * Return: stock, nombre de charactère
- */
-
-size_t print_list(const list_t *h)
+list_t *add_node(list_t **head, const char *str)
 {
 	size_t stock = 0;
 
-	while (h)
+	list_t *new_node = malloc(sizeof(list_t));
+
+	if (!new_node)
+		return (NULL);
+
+	while (new_node)
 	{
-		if (h->str == NULL)
+		if (new_node->str == NULL)
 		{
 			printf("[0] (nil)\n");
 		}
 		else
 		{
-			printf("[%d] %s\n", h->len, h->str);
+			new_node->str = strdup(str);
+
+			*head = new_node;
+			printf("[%d] %s\n", new_node->len, new_node->str);
 		}
-		h = h->next;
+		new_node = new_node->next = *head;
 		stock++;
 	}
-	return (stock);
+	return (new_node);
+	free (new_node);
 }

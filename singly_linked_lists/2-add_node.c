@@ -1,10 +1,9 @@
 #include "lists.h"
 
 /**
- * add_node - insère un noeud
- *@head: Noeud de tête
- *@str: string
- * Return: new_node
+ * _strlen - nombre caractère
+ *@s: string
+ * Return: nbre caractère
  */
 int _strlen(char *s)
 {
@@ -17,10 +16,16 @@ int _strlen(char *s)
 
 	return (i);
 }
-
+/**
+ * add_node - insère un noeud
+ *@head: Noeud de tête
+ *@str: string
+ * Return: new_node
+ */
 list_t *add_node(list_t **head, const char *str)
 {
 	list_t *new_node = malloc(sizeof(list_t));
+
 	if (!new_node)
 	{
 		free(new_node);
@@ -42,7 +47,6 @@ list_t *add_node(list_t **head, const char *str)
 	}
 
 	new_node->len = strlen(new_node->str);
-	
 	new_node->next = *head;
 	*head = new_node;
 
