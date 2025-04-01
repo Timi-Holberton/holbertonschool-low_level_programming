@@ -15,7 +15,7 @@ int _strlen(char *s)
 }
 
 /**
- * add_node - insère un noeud
+ * add_node_end - insère un noeud à la fin
  *@head: Noeud de tête
  *@str: string
  * Return: new_node
@@ -23,17 +23,10 @@ int _strlen(char *s)
 list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *new_node = malloc(sizeof(list_t));
-	list_t *fin = *head;
+	list_t *end = *head;
 
-	if (!new_node || !str)
+	if (!new_node)
 	{
-		free(new_node);
-		return (NULL);
-	}
-
-	if (*head == NULL)
-	{
-		*head = new_node;
 		return (NULL);
 	}
 
@@ -44,13 +37,22 @@ list_t *add_node_end(list_t **head, const char *str)
 		free(new_node);
 		return (NULL);
 	}
-	while (fin->next != NULL)
-	{
-		fin = fin->next;
-	}
 
 	new_node->len = _strlen(new_node->str);
-	fin->next = new_node;
+	new_node->next = NULL;
+
+	if (*head == NULL)
+	{
+		*head = new_node;
+		return (NULL);
+	}
+
+	while (end->next != NULL)
+	{
+		end = end->next;
+	}
+
+	end->next = new_node;
 
 	return (new_node);
 }
