@@ -2,51 +2,58 @@
 
 /**
  * add_dnodeint - Ajoute un nœud au début d'une liste doublement chaînée.
- * @head: Pointeur vers le premier nœud de la liste.
- * @n: Valeur à stocker dans le nœud.
+ * @head:Pointeur vers le premier nœud de la liste.
+ * @n:Valeur à stocker dans le nœud.
  *
  * Cette fonction crée un nouveau nœud avec la valeur donnée et l'ajoute
  * au début de la liste doublement chaînée. Elle ajuste les pointeurs
  * pour relier correctement les nœuds.
  *
- * Return: Pointeur vers le nouveau nœud.
+ * Return:Pointeur vers le nouveau nœud.
  */
-
-dlistint_t *add_dnodeint(dlistint_t **head, const int n)
+dlistint_t *add_dnodeint(dlistint_t **head,const int n)
 {
-	dlistint_t *new_node = malloc(sizeof(dlistint_t)); /* Alloue un nœud */
+	dlistint_t *nouveau_noeud; /* Déclare un nouveau nœud */
 
-	if (new_node == NULL) /* Vérifie si l'allocation a échoué */
-		return (NULL); /* Retourne NULL si l'allocation échoue */
+	/* Alloue de la mémoire pour le nouveau nœud */
+	nouveau_noeud=malloc(sizeof(dlistint_t));
+	/* Vérifie si l'allocation a échoué */
+	if(nouveau_noeud==NULL)
+		return(NULL); /* Retourne NULL si l'allocation échoue */
 
-	new_node->n = n; /* Assigne la valeur à stocker dans le nœud */
+	/* Assigne la valeur au nouveau nœud */
+	nouveau_noeud->n=n;
 
-	new_node->next = *head; /* Relie le nœud au début de la liste */
+	/* Relie le nouveau nœud au début de la liste */
+	nouveau_noeud->next=*head;
 
-	new_node->prev = NULL; /* Le nouveau nœud n'a pas de précédent */
+	/* Le nouveau nœud n'a pas de précédent */
+	nouveau_noeud->prev=NULL;
 
-	if (*head != NULL) /* Si la liste n'est pas vide */
-		(*head)->prev = new_node; /* Relie l'ancien premier nœud au nouveau */
+	/* Si la liste n'est pas vide, ajuste le pointeur prev du premier nœud */
+	if(*head!=NULL)
+		(*head)->prev=nouveau_noeud;
 
-	*head = new_node; /* Met à jour le début de la liste */
+	/* Met à jour le début de la liste */
+	*head=nouveau_noeud;
 
-	return (new_node); /* Retourne le nouveau nœud */
+	/* Retourne le nouveau nœud */
+	return(nouveau_noeud);
 }
 
-/* Lexique des termes techniques :
-malloc : Fonction qui alloue de la mémoire dynamiquement.
-NULL : Valeur indiquant un pointeur invalide ou une absence de valeur.
-Pointeur : Variable qui contient l'adresse d'un élément en mémoire.
-Noeud (node) : Élément d'une liste chaînée contenant des données.
-Liste doublement chaînée : Structure de données où chaque nœud pointe
-vers son précédent et son suivant.
-*/
+/* Lexique des termes techniques:*/
+/*malloc:Fonction qui alloue de la mémoire dynamiquement.*/
+/*NULL:Valeur indiquant un pointeur invalide ou une absence de valeur.*/
+/*Pointeur:Variable qui contient l'adresse d'un élément en mémoire.*/
+/*Noeud(node):Élément d'une liste chaînée contenant des données.*/
+/*Liste doublement chaînée:Structure de données où chaque nœud pointe*/
+/*vers son précédent et son suivant.*/
 
- /* Rappels des notions de base utilisées :
-Pointeurs : Utilisés pour parcourir la liste et manipuler les adresses
-mémoire des nœuds.
-Allocations dynamiques : La fonction malloc permet de réserver de la
-mémoire pendant l'exécution.
-Listes doublement chaînées : Les nœuds sont reliés entre eux via
-deux pointeurs : `next` pour l'élément suivant et `prev` pour l'élément précédent.
-*/
+/* Rappels des notions de base utilisées:*/
+/*Pointeurs:Utilisés pour parcourir la liste et manipuler les adresses*/
+/*mémoires des nœuds.*/
+/*Allocations dynamiques:La fonction malloc permet de réserver de la*/
+/*mémoires pendant l'exécution.*/
+/*Listes doublement chaînées:Les nœuds sont reliés entre eux via*/
+/*deux pointeurs:`next` pour l'élément suivant et `prev` pour l'élément
+/*précédent.*/

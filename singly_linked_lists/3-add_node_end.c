@@ -18,52 +18,52 @@ int _strlen(char *s)
 }
 
 /**
- * add_node_end - Ajoute un nœud à la fin d'une liste chaînée.
- * @head: Adresse du pointeur vers le premier nœud.
- * @str: Chaîne de caractères à copier dans le nœud.
- * Return: Adresse du nouveau nœud, ou NULL en cas d'échec.
+ * add_node_end - Ajoute un noeud à la fin d'une liste chaînée.
+ * @head: Adresse du pointeur vers le premier noeud.
+ * @str: Chaîne de caractères à copier dans le noeud.
+ * Return: Adresse du nouveau noeud, ou NULL en cas d'échec.
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *new_node; /* Pointeur pour le nouveau nœud */
-	list_t *end; /* Pointeur pour parcourir la liste */
+	list_t *nouveau_noeud; /* Pointeur pour le nouveau noeud */
+	list_t *noeud_en_cours; /* Pointeur pour parcourir la liste */
 
 	/* Vérifie si les paramètres sont valides */
 	if (head == NULL || str == NULL)
 		return (NULL); /* Retourne NULL si head ou str est invalide */
 
-	/* Alloue de la mémoire pour le nouveau nœud */
-	new_node = malloc(sizeof(list_t));
-	if (!new_node) /* Vérifie si malloc a échoué */
+	/* Alloue de la mémoire pour le nouveau noeud */
+	nouveau_noeud = malloc(sizeof(list_t));
+	if (!nouveau_noeud) /* Vérifie si malloc a échoué */
 		return (NULL);
 
-	/* Duplique la chaîne et l'affecte au nœud */
-	new_node->str = strdup(str);
-	if (!new_node->str) /* Vérifie si strdup a échoué */
+	/* Duplique la chaîne et l'affecte au noeud */
+	nouveau_noeud->str = strdup(str);
+	if (!nouveau_noeud->str) /* Vérifie si strdup a échoué */
 	{
-		free(new_node); /* Libère la mémoire du nœud */
+		free(nouveau_noeud); /* Libère la mémoire du noeud */
 		return (NULL);
 	}
 
-	/* Remplit les champs du nouveau nœud */
-	new_node->len = _strlen(new_node->str); /* Longueur de str */
-	new_node->next = NULL; /* Le dernier nœud pointe vers NULL */
+	/* Remplit les champs du nouveau noeud */
+	nouveau_noeud->len = _strlen(nouveau_noeud->str); /* Longueur de str */
+	nouveau_noeud->next = NULL; /* Le dernier noeud pointe vers NULL */
 
-	/* Si la liste est vide, on ajoute le nœud en tête */
+	/* Si la liste est vide, on ajoute le noeud en tête */
 	if (*head == NULL)
 	{
-		*head = new_node; /* Le nouveau nœud devient le premier */
-		return (new_node);
+		*head = nouveau_noeud; /* Le nouveau noeud devient le premier */
+		return (nouveau_noeud);
 	}
 
-	/* Trouve le dernier nœud de la liste */
-	end = *head; /* Commence au premier nœud */
-	while (end->next != NULL) /* Parcourt la liste jusqu'à la fin */
-		end = end->next; /* Passe au nœud suivant */
+	/* Trouve le dernier noeud de la liste */
+	noeud_en_cours = *head; /* Commence au premier noeud */
+	while (noeud_en_cours->next != NULL) /* Parcourt la liste jusqu'à la fin */
+		noeud_en_cours = noeud_en_cours->next; /* Passe au noeud suivant */
 
-	/* Ajoute le nouveau nœud à la fin de la liste */
-	end->next = new_node;
+	/* Ajoute le nouveau noeud à la fin de la liste */
+	noeud_en_cours->next = nouveau_noeud;
 
-	/* Retourne l'adresse du nouveau nœud */
-	return (new_node);
+	/* Retourne l'adresse du nouveau noeud */
+	return (nouveau_noeud);
 }
