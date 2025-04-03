@@ -11,34 +11,34 @@
  *
  * Return:Pointeur vers le nouveau nœud.
  */
-dlistint_t *add_dnodeint(dlistint_t **head,const int n)
+dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
 	dlistint_t *nouveau_noeud; /* Déclare un nouveau nœud */
 
 	/* Alloue de la mémoire pour le nouveau nœud */
-	nouveau_noeud=malloc(sizeof(dlistint_t));
+	nouveau_noeud = malloc(sizeof(dlistint_t));
 	/* Vérifie si l'allocation a échoué */
-	if(nouveau_noeud==NULL)
-		return(NULL); /* Retourne NULL si l'allocation échoue */
+	if (nouveau_noeud == NULL)
+		return (NULL); /* Retourne NULL si l'allocation échoue */
 
 	/* Assigne la valeur au nouveau nœud */
-	nouveau_noeud->n=n;
+	nouveau_noeud->n = n;
 
 	/* Relie le nouveau nœud au début de la liste */
-	nouveau_noeud->next=*head;
+	nouveau_noeud->next = *head;
 
 	/* Le nouveau nœud n'a pas de précédent */
-	nouveau_noeud->prev=NULL;
+	nouveau_noeud->prev = NULL;
 
 	/* Si la liste n'est pas vide, ajuste le pointeur prev du premier nœud */
-	if(*head!=NULL)
-		(*head)->prev=nouveau_noeud;
+	if (*head != NULL)
+		(*head)->prev = nouveau_noeud;
 
 	/* Met à jour le début de la liste */
-	*head=nouveau_noeud;
+	*head = nouveau_noeud;
 
 	/* Retourne le nouveau nœud */
-	return(nouveau_noeud);
+	return (nouveau_noeud);
 }
 
 /* Lexique des termes techniques:*/
