@@ -2,10 +2,10 @@
 
 /**
  * insert_dnodeint_at_index - insère un nœud dans une liste
- *doubl. chaînée à un index donné.
- *@h:Pointeur vers la tête de la liste
- *@idx:Index où insérer le nouveau nœud
- *@n:Valeur du nouveau nœud
+ *double chaînée à un index donné.
+ *@h: Pointeur vers la tête de la liste
+ *@idx: Index où insérer le nouveau nœud
+ *@n: Valeur du nouveau nœud
  * Return: Pointeur vers le nouveau nœud ou NULL en cas d'échec
  */
 
