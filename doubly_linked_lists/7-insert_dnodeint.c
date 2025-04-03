@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <stdlib.h>
 
 /**
  * insert_dnodeint_at_index - insère un nœud dans une liste
@@ -7,7 +6,7 @@
  *@h:Pointeur vers la tête de la liste
  *@idx:Index où insérer le nouveau nœud
  *@n:Valeur du nouveau nœud
- *Return: Pointeur vers le nouveau nœud ou NULL en cas d'échec
+ * Return: Pointeur vers le nouveau nœud ou NULL en cas d'échec
  */
 
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
