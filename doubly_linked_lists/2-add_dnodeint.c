@@ -55,5 +55,5 @@ dlistint_t *add_dnodeint(dlistint_t **head,const int n)
 /*Allocations dynamiques:La fonction malloc permet de réserver de la*/
 /*mémoires pendant l'exécution.*/
 /*Listes doublement chaînées:Les nœuds sont reliés entre eux via*/
-/*deux pointeurs:`next` pour l'élément suivant et `prev` pour l'élément
+/*deux pointeurs:`next` pour l'élément suivant et `prev` pour l'élément*/
 /*précédent.*/
