@@ -1,5 +1,10 @@
 #include "main.h"
-
+/**
+ * read_textfile - check the code
+ *@filename: a complter
+ *@letters: caractère
+ * Return: Always 0.
+ */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
@@ -8,18 +13,16 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	char *stockread;
 
 	if (filename == NULL)
-	return (0);
+		return (0);
 
 	fd = open(filename, O_RDONLY); /* fd */
 	if (fd == -1)
-	{
 		return (0);
-	}
 
 	stockread = malloc(letters);
 	if (stockread == NULL)
 	{
-		close (fd);
+		close(fd);
 		return (0);
 	}
 
@@ -32,15 +35,13 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 
 	write_bytes = write(STDOUT_FILENO, stockread, bytes_read);
-
 	if (write_bytes == -1)
 	{
 		free(stockread);
 		close(fd);
 		return (0);
 	}
-
 	free(stockread);
-	close (fd);
+	close(fd);
 	return (write_bytes);
 }
