@@ -10,37 +10,37 @@
  */
 char *_strdup(char *str)
 {
-    int i, j; /* Variables pour les index */
-    char *dest; /* Pointeur vers la copie de la chaîne */
+	int i, j; /* Variables pour les index */
+	char *dest; /* Pointeur vers la copie de la chaîne */
 
-    /* Vérifier si str est NULL */
-    if (str == NULL)
-    {
-        return (NULL); /* Retourne NULL si str est vide */
-    }
+	/* Vérifier si str est NULL */
+	if (str == NULL)
+	{
+		return (NULL); /* Retourne NULL si str est vide */
+	}
 
-    /* Calculer la longueur de str */
-    for (i = 0; str[i] != '\0'; i++)
-        ; /* Boucle vide pour compter la taille */
+	/* Calculer la longueur de str */
+	for (i = 0; str[i] != '\0'; i++)
+		; /* Boucle vide pour compter la taille */
 
-    /* Allouer de la mémoire pour la copie */
-    dest = malloc((i + 1) * sizeof(char));
+	/* Allouer de la mémoire pour la copie */
+	dest = malloc((i + 1) * sizeof(char));
 
-    /* Vérifier si l'allocation a échoué */
-    if (!dest)
-    {
-        return (NULL); /* Retourne NULL si malloc échoue */
-    }
+	/* Vérifier si l'allocation a échoué */
+	if (!dest)
+	{
+		return (NULL); /* Retourne NULL si malloc échoue */
+	}
 
-    /* Copier les caractères de str vers dest */
-    for (j = 0; str[j] != '\0'; j++)
-    {
-        dest[j] = str[j]; /* Copie caractère par caractère */
-    }
+	/* Copier les caractères de str vers dest */
+	for (j = 0; str[j] != '\0'; j++)
+	{
+		dest[j] = str[j]; /* Copie caractère par caractère */
+	}
 
-    dest[j] = '\0'; /* Ajouter le caractère nul à la fin */
+	dest[j] = '\0'; /* Ajouter le caractère nul à la fin */
 
-    return (dest); /* Retourner le pointeur vers la copie */
+	return (dest); /* Retourner le pointeur vers la copie */
 }
 
 /**

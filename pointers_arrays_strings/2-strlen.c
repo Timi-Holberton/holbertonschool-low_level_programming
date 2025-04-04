@@ -17,7 +17,7 @@ int _strlen(char *s)
         i++;
     }
 
-    return (s);  /* Retourne la longueur de la chaîne */
+    return (i);  /* Retourne la longueur de la chaîne */
 }
 
 /**
