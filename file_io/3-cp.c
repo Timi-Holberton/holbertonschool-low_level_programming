@@ -19,44 +19,45 @@ int main(int argc, char *argv[])
 	fd1 = open(argv[1], O_RDONLY);
 	if (fd1 == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file file_from\n");
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 
 	fd2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fd2 == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to file_to\n");
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 
 	caractere_lue = read(fd1, stockage1, 1024);
 	if (caractere_lue == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to file_to\n");
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	while (caractere_lue > 0)
-		caractere_write = write(fd2, stockage1, caractere_lue);
-	if (caractere_write == -1)
+
+	while ((caractere_lue = read(fd1, stockage1, 1024)) > 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to file_to\n");
-		exit(99);
+		caractere_write = write(fd2, stockage1, caractere_lue);
+		if (caractere_write == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			exit(99);
+		}
 	}
-	if (caractere_lue != caractere_write)
-		close(fd2);
 
 	if (close(fd1) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd fd1\n");
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd1);
 		exit(100);
 	}
 
 	if (close(fd2) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd fd2\n");
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd2);
 		exit(100);
 	}
-	return(0);
+	return (0);
 }
 
