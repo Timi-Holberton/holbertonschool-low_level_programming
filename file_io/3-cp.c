@@ -32,16 +32,11 @@ int main(int argc, char *argv[])
 
 	while ((caractere_lue = read(fd1, stockage1, 1024)) > 0)
 	{
-		if (caractere_lue == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-			exit(99);
-		}
-
 		caractere_write = write(fd2, stockage1, caractere_lue);
 		if (caractere_write == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			close(fd1);
 			exit(99);
 		}
 	}
@@ -59,4 +54,3 @@ int main(int argc, char *argv[])
 	}
 	return (0);
 }
-
