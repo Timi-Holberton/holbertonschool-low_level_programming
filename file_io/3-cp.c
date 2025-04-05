@@ -48,13 +48,13 @@ int main(int argc, char *argv[])
 
 	if (close(fd1) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd FD_VALUE\n");
+		dprintf(STDERR_FILENO, "Error: Can't close fd fd1\n");
 		exit(100);
 	}
 
 	if (close(fd2) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd FD_VALUE\n");
+		dprintf(STDERR_FILENO, "Error: Can't close fd fd2\n");
 		exit(100);
 	}
 	return(0);
